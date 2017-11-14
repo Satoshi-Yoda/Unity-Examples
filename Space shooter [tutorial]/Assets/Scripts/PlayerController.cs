@@ -22,12 +22,25 @@ public class PlayerController : MonoBehaviour
 	public Boundary boundary;
 	public float tilt;
 
-	void Start () { }
+	public GameObject shot;
+	public Transform shotSpawn;
+	public float fireRate;
+
+	private float nextFire;
+
+	void Start() { }
 	
-	void FixedUpdate () {
+	void FixedUpdate() {
 		var body = GetComponent<Rigidbody>();
 		body.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, 0.0f, Input.GetAxis("Vertical") * speed);
 		body.position = boundary.Apply(body.position);
 		body.rotation = Quaternion.Euler(0.0f, 0.0f, body.velocity.x * -tilt);
+	}
+
+	void Update() {
+		if (Input.GetButton("Fire1") && Time.time > nextFire) {
+			nextFire = Time.time + fireRate;
+			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+		}
 	}
 }
