@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class AsteroidFieldController : MonoBehaviour
 {
-	public int count;
-	public float radius;
+	public int groupCount;
+	public int groupSize;
+	public float areaRadius;
+	public float groupRadius;
 	public GameObject prefab;
 
 	void Start() {
-		for (int i = 0; i < count; i++) {
-			//Vector3 position = new Vector3(Random.Range(-radius, +radius), Random.Range(-radius, +radius), 0.0f);
-			Vector3 position = Random.insideUnitCircle * radius;
-			AsteroidController asteroid = (Instantiate(prefab, position, Quaternion.identity) as GameObject).GetComponent<AsteroidController>();
-			asteroid.minerals = Random.Range(50, 1500);
+		for (int k = 0; k < groupCount; k++) {
+			Vector3 groupPosition = Random.insideUnitCircle * areaRadius;
+			for (int i = 0; i < Random.Range(1, groupSize); i++) {
+				Vector3 shift = Random.insideUnitCircle * groupRadius;
+				Vector3 position = groupPosition + shift;
+				AsteroidController asteroid = (Instantiate(prefab, position, Quaternion.identity) as GameObject).GetComponent<AsteroidController>();
+				asteroid.minerals = Random.Range(50, 1500);
+			}
 		}
 	}
 }
