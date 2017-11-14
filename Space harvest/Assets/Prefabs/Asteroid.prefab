@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1254684328523676}
+  m_IsPrefabParent: 1
+--- !u!1 &1254684328523676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4782255288395400}
+  - component: {fileID: 114502367799558262}
+  m_Layer: 0
+  m_Name: Asteroid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4782255288395400
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254684328523676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.92, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114502367799558262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254684328523676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae91e2a8713b7ba408b6f7ea6b19d63f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroids_s4:
+  - {fileID: 1547654971283604, guid: f2d0efd3bd4a5ef4cb5a97ed2b30e60d, type: 2}
+  - {fileID: 1378654422512802, guid: 707a54edae902dc45a1c7347d6cb7354, type: 2}
+  - {fileID: 1304143163891638, guid: 849236c2836cbca4082fb31bc6c0b831, type: 2}
+  asteroids_s3:
+  - {fileID: 1792520467255474, guid: d027001fdcaaa9b4b8490cbed13be31c, type: 2}
+  - {fileID: 1066343138675600, guid: 85a4bdfa910a5fa459ab0989138d5c06, type: 2}
+  - {fileID: 1632837816985840, guid: fd449243c03812d458f093d79876b35f, type: 2}
+  - {fileID: 1229105401003696, guid: d150e0c1cdbd0aa47bb45ae8250b41af, type: 2}
+  asteroids_s2:
+  - {fileID: 1747534860782140, guid: beedcaa40bc7e6e419257d4ba046f511, type: 2}
+  - {fileID: 1582920882336448, guid: b904f7d8c0c07dc47bc1554d18d8844b, type: 2}
+  - {fileID: 1641411360897062, guid: e959fbc78124cba4a872306debf54bb8, type: 2}
+  - {fileID: 1046730762672366, guid: f948365959448a74aa3a04275046ef7e, type: 2}
+  asteroids_s1:
+  - {fileID: 1599298746918524, guid: 61ad60d45d16a434a9a3cb239262b81f, type: 2}
+  - {fileID: 1922957351128052, guid: c286f0cbbca5c2b4b805d99b9b994f0f, type: 2}
+  - {fileID: 1872287700232574, guid: 46166778b5def5043b88f4d2ca54b4ff, type: 2}
+  minerals: 150
