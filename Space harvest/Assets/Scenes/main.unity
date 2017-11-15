@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f59eed5a97d4fe478f19aea30be752b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rate: 100
 --- !u!1 &701659156
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,9 +416,10 @@ GameObject:
   m_Component:
   - component: {fileID: 701659158}
   - component: {fileID: 701659157}
+  - component: {fileID: 701659159}
   m_Layer: 0
-  m_Name: Game
-  m_TagString: Untagged
+  m_Name: GameController
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -515,6 +517,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &701659159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 701659156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f607ee79af4666e4f97339fdb8dd6d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineralsText: {fileID: 494155360}
 --- !u!1 &904928081
 GameObject:
   m_ObjectHideFlags: 0
