@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
 	public Text mineralsText;
+	public GameObject HarvesterPrototype;
+	public GameObject SolarPanelPrototype;
+	public GameObject EnergyLinkPrototype;
+	public GameObject LaserTurretPrototype;
+
+	private GameObject activePrototype;
 
 	private float minerals = 0.0f;
 
@@ -13,9 +19,22 @@ public class GameController : MonoBehaviour
 		minerals += amount;
 	}
 
+	public void SelectHarvesterPrototype() {
+		Destroy(activePrototype);
+		activePrototype = Instantiate(HarvesterPrototype, Vector3.zero, Quaternion.identity);
+	}
+
+	public void SelectSolarPanelPrototype() {
+		Destroy(activePrototype);
+		activePrototype = Instantiate(SolarPanelPrototype, Vector3.zero, Quaternion.identity);
+	}
+
 	void Start() { }
 	
 	void Update() {
 		mineralsText.text = "" + Mathf.Round(minerals);
+		if (Input.GetMouseButtonDown(1)) {
+            Destroy(activePrototype);
+		}
 	}
 }

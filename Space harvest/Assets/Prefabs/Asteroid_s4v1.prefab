@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4193448136549756}
   - component: {fileID: 212340862399049390}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Asteroid_s4v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
