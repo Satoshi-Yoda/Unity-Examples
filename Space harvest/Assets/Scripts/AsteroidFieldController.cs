@@ -17,7 +17,7 @@ public class AsteroidFieldController : MonoBehaviour
 				Vector3 shift = Random.insideUnitCircle * groupRadius;
 				Vector3 position = groupPosition + shift;
 				AsteroidController asteroid = (Instantiate(prefab, position, Quaternion.identity) as GameObject).GetComponent<AsteroidController>();
-				asteroid.minerals = Random.Range(50, 1500);
+				asteroid.minerals = Random.Range(50, 2000);
 			}
 		}
 	}

@@ -4,17 +4,38 @@ using UnityEngine;
 
 public class HarvesterContoller : MonoBehaviour
 {
-	private List<GameObject> asteroids = new List<GameObject>();
+	public float rate;
 
-	void Start () { }
+	private GameController gameController;
+	private List<AsteroidController> asteroids = new List<AsteroidController>();
+
+	void Start () {
+		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+		if (gameControllerObject != null) {
+			gameController = gameControllerObject.GetComponent<GameController>();
+		}
+		if (gameController == null) {
+			Debug.Log("Can not find GameController object");
+		}
+	}
 	
 	void Update() {
-		//Debug.Log(asteroids.Count);
+		foreach (AsteroidController asteroid in asteroids) {
+			float amount = Time.deltaTime * rate / asteroids.Count;
+			asteroid.Harvest(amount);
+			gameController.AddMinerals(amount);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Asteroid") {
-			asteroids.Add(other.gameObject);
+			asteroids.Add(other.gameObject.GetComponent<AsteroidController>());
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.tag == "Asteroid") {
+			asteroids.Remove(other.gameObject.GetComponent<AsteroidController>());
 		}
 	}
 }

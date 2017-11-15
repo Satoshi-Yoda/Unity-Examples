@@ -8,7 +8,7 @@ public class DestroyByContact : MonoBehaviour
 	public GameObject playerExplosion;
 	public int scoreValue;
 
-	private GameController gameController = null;
+	private GameController gameController;
 
 	void Start() {
 		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
