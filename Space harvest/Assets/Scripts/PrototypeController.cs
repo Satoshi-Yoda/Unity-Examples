@@ -13,8 +13,10 @@ public class PrototypeController : MonoBehaviour
 		screenPoint.z = 10.0f;
 		transform.position = Camera.main.ScreenToWorldPoint(screenPoint);
 
-		if (Input.GetMouseButtonDown(0)) {
-            Instantiate(objectPrefab, transform.position, Quaternion.identity);
+		if (screenPoint.y > 100) {
+			if (Input.GetMouseButtonDown(0)) {
+	            Instantiate(objectPrefab, transform.position, Quaternion.identity);
+			}
 		}
 	}
 }

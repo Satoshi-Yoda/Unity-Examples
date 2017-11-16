@@ -29,11 +29,21 @@ public class GameController : MonoBehaviour
 		activePrototype = Instantiate(SolarPanelPrototype, Vector3.zero, Quaternion.identity);
 	}
 
+	public void SelectEnergyLinkPrototype() {
+		Destroy(activePrototype);
+		activePrototype = Instantiate(EnergyLinkPrototype, Vector3.zero, Quaternion.identity);
+	}
+
+	public void SelectLaserTurretPrototype() {
+		Destroy(activePrototype);
+		activePrototype = Instantiate(LaserTurretPrototype, Vector3.zero, Quaternion.identity);
+	}
+
 	void Start() { }
 	
 	void Update() {
 		mineralsText.text = "" + Mathf.Round(minerals);
-		if (Input.GetMouseButtonDown(1)) {
+		if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
             Destroy(activePrototype);
 		}
 	}
