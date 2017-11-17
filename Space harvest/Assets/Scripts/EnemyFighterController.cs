@@ -58,6 +58,8 @@ public class EnemyFighterController : MonoBehaviour
 				gameController.AddRequisition(requisition);
 				Destroy(nearest.gameObject);
 			}
+		} else {
+			gameController.GameOver();
 		}
 	}
 }

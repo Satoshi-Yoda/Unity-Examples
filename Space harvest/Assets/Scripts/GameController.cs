@@ -1,7 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class GameController : MonoBehaviour
 	public Text spentMineralsText;
 	public Text spentEnergyText;
 	public Text spentRequisitionText;
+	public Text gameOverText;
+	public GameObject gameOverButton;
+	public GameObject gameOverImage;
 	public GameObject HarvesterPrototype;
 	public GameObject SolarPanelPrototype;
 	public GameObject EnergyLinkPrototype;
@@ -20,9 +24,22 @@ public class GameController : MonoBehaviour
 	private PrototypeController activePrototype;
 	private int energy = 0;
 	private int requisition = 0;
+	private int totalEnergy = 0;
+	private float totalMinerals = 0.0f;
+
+	public void GameOver() {
+		gameOverText.gameObject.SetActive(true);
+		gameOverImage.SetActive(true);
+		gameOverButton.SetActive(true);
+	}
+
+	public void Restart() {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
 
 	public void AddMinerals(float amount) {
 		minerals += amount;
+		totalMinerals += amount;
 	}
 
 	public bool SpendMinerals(float amount) {
@@ -36,6 +53,7 @@ public class GameController : MonoBehaviour
 
 	public void IncEnergy() {
 		energy++;
+		totalEnergy++;
 	}
 
 	public void DecEnergy() {
@@ -66,12 +84,17 @@ public class GameController : MonoBehaviour
 		activePrototype = Instantiate(LaserTurretPrototype, Vector3.zero, Quaternion.identity).GetComponent<PrototypeController>();
 	}
 
-	void Start() { }
-	
+	void Start() {
+		gameOverText.gameObject.SetActive(false);
+		gameOverImage.SetActive(false);
+		gameOverButton.SetActive(false);
+	}
+
 	void Update() {
 		mineralsText.text = "" + Mathf.Round(minerals);
 		energyText.text = "" + energy;
 		requisitionText.text = "" + requisition;
+		gameOverText.text = "Score: " + (requisition * 10 + totalEnergy + Mathf.Round(totalMinerals));
 
 		if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
             Destroy(activePrototype.gameObject);
