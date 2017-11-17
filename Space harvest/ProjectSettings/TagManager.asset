@@ -8,6 +8,8 @@ TagManager:
   - Harvester
   - EnergyLink
   - ConstructionBox
+  - SolarPanel
+  - LaserTurret
   layers:
   - Default
   - TransparentFX

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnergyBoomController : MonoBehaviour
+public class DestroyAfterTime : MonoBehaviour
 {
 	public float lifeTime;
 

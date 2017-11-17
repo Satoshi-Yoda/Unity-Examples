@@ -55,7 +55,8 @@
      <Compile Include="Assets\Scripts\AsteroidFieldController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\ConstructionBoxController.cs" />
-     <Compile Include="Assets\Scripts\EnergyBoomController.cs" />
+     <Compile Include="Assets\Scripts\DestroyAfterTime.cs" />
+     <Compile Include="Assets\Scripts\EnemyFighterController.cs" />
      <Compile Include="Assets\Scripts\EnergyController.cs" />
      <Compile Include="Assets\Scripts\EnergyLinkController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
