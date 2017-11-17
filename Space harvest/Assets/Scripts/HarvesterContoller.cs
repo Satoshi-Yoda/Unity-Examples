@@ -26,11 +26,6 @@ public class HarvesterContoller : MonoBehaviour
 			asteroid.Harvest(amount);
 			gameController.AddMinerals(amount);
 		}
-
-		if (asteroids.Count == 0) {
-			Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
-			Destroy(gameObject);
-		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -42,6 +37,10 @@ public class HarvesterContoller : MonoBehaviour
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.tag == "Asteroid") {
 			asteroids.Remove(other.gameObject.GetComponent<AsteroidController>());
+			if (asteroids.Count == 0) {
+				Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
+				Destroy(gameObject);
+			}
 		}
 	}
 }

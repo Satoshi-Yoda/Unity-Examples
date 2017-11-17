@@ -13,6 +13,7 @@ public class EnemyGenerator : MonoBehaviour
 	public float mothershipDifficulty;
 	public float mothershipTime;
 	public float startDifficulty;
+	public float lastWaveTime;
 	public GameObject fighterPrefab;
 	public GameObject interseptorPrefab;
 	public GameObject mothershipPrefab;
@@ -26,11 +27,11 @@ public class EnemyGenerator : MonoBehaviour
 	
 	IEnumerator Spawn() {
 		yield return new WaitForSeconds(delay);
-		while (true) {
+		while (Time.time < lastWaveTime) {
 			float targetDifficulty = (Time.time - startTime - delay) * difficultyPerSecond + startDifficulty;
 			float difficulty = 0.0f;
 			float angle = Random.Range(0, 360);
-			if (Random.value < 0.25) {
+			if (Random.value < 0.25 && Time.time <= mothershipTime) {
 				while (difficulty <= targetDifficulty) {
 					Vector3 position = Quaternion.Euler(0, 0, angle) * new Vector3(radius + Random.Range(-2.9f, +2.9f), 0, 0);
 					angle += 7;
@@ -39,14 +40,14 @@ public class EnemyGenerator : MonoBehaviour
 				}
 			} else {
 				while (difficulty <= targetDifficulty) {
-					if (Time.time > mothershipTime && Random.value < 0.33) {
+					if (Time.time > mothershipTime) {
 						Vector3 position = Quaternion.Euler(0, 0, angle) * new Vector3(radius + Random.Range(-2.9f, +2.9f), 0, 0);
-						angle += 7;
+						angle += 10;
 						Instantiate(mothershipPrefab, position, Quaternion.identity);
 						difficulty += mothershipDifficulty;
 					} else {
 						Vector3 position = Quaternion.Euler(0, 0, angle) * new Vector3(radius + Random.Range(-2.9f, +2.9f), 0, 0);
-						angle += 7;
+						angle += 5;
 						Instantiate(fighterPrefab, position, Quaternion.identity);
 						difficulty += fighterDifficulty;
 					}

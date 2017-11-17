@@ -15,10 +15,12 @@ public class GameController : MonoBehaviour
 	public Text gameOverText;
 	public GameObject gameOverButton;
 	public GameObject gameOverImage;
+	public GameObject youVinImage;
 	public GameObject HarvesterPrototype;
 	public GameObject SolarPanelPrototype;
 	public GameObject EnergyLinkPrototype;
 	public GameObject LaserTurretPrototype;
+	public EnemyGenerator enemyGenerator;
 	public float minerals;
 
 	private PrototypeController activePrototype;
@@ -30,6 +32,12 @@ public class GameController : MonoBehaviour
 	public void GameOver() {
 		gameOverText.gameObject.SetActive(true);
 		gameOverImage.SetActive(true);
+		gameOverButton.SetActive(true);
+	}
+
+	public void Win() {
+		gameOverText.gameObject.SetActive(true);
+		youVinImage.SetActive(true);
 		gameOverButton.SetActive(true);
 	}
 
@@ -65,35 +73,36 @@ public class GameController : MonoBehaviour
 	}
 
 	public void SelectHarvesterPrototype() {
-		Destroy(activePrototype);
-		activePrototype = Instantiate(HarvesterPrototype, Vector3.zero, Quaternion.identity).GetComponent<PrototypeController>();
+		if (activePrototype != null) Destroy(activePrototype.gameObject);
+		activePrototype = Instantiate(HarvesterPrototype, new Vector3(999, 999, 0), Quaternion.identity).GetComponent<PrototypeController>();
 	}
 
 	public void SelectSolarPanelPrototype() {
-		Destroy(activePrototype);
-		activePrototype = Instantiate(SolarPanelPrototype, Vector3.zero, Quaternion.identity).GetComponent<PrototypeController>();
+		if (activePrototype != null) Destroy(activePrototype.gameObject);
+		activePrototype = Instantiate(SolarPanelPrototype, new Vector3(999, 999, 0), Quaternion.identity).GetComponent<PrototypeController>();
 	}
 
 	public void SelectEnergyLinkPrototype() {
-		Destroy(activePrototype);
-		activePrototype = Instantiate(EnergyLinkPrototype, Vector3.zero, Quaternion.identity).GetComponent<PrototypeController>();
+		if (activePrototype != null) Destroy(activePrototype.gameObject);
+		activePrototype = Instantiate(EnergyLinkPrototype, new Vector3(999, 999, 0), Quaternion.identity).GetComponent<PrototypeController>();
 	}
 
 	public void SelectLaserTurretPrototype() {
-		Destroy(activePrototype);
-		activePrototype = Instantiate(LaserTurretPrototype, Vector3.zero, Quaternion.identity).GetComponent<PrototypeController>();
+		if (activePrototype != null) Destroy(activePrototype.gameObject);
+		activePrototype = Instantiate(LaserTurretPrototype, new Vector3(999, 999, 0), Quaternion.identity).GetComponent<PrototypeController>();
 	}
 
 	void Start() {
 		gameOverText.gameObject.SetActive(false);
 		gameOverImage.SetActive(false);
+		youVinImage.SetActive(false);
 		gameOverButton.SetActive(false);
 	}
 
 	void Update() {
 		mineralsText.text = "" + Mathf.Round(minerals);
 		energyText.text = "" + energy;
-		requisitionText.text = "" + requisition + "  " + Mathf.Round(Time.time) + " sec";
+		requisitionText.text = "" + requisition + "              " + Mathf.Round(Time.time) + " sec";
 		gameOverText.text = "Score: " + (requisition * 10 + totalEnergy + Mathf.Round(totalMinerals));
 
 		if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
@@ -106,6 +115,12 @@ public class GameController : MonoBehaviour
 		} else {
 			spentMineralsText.text = "";
 			spentEnergyText.text = "";
+		}
+
+		List<GameObject> targets = new List<GameObject>();
+		targets.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+		if (targets.Count == 0 && Time.time > enemyGenerator.lastWaveTime) {
+			Win();
 		}
 	}
 }

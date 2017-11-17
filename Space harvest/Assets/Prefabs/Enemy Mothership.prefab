@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81021d38b97ecd04fa64747c5b9464f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 0.25
+  velocity: 0.4
   thrust: 1
   hull: 1000
   requisition: 100
@@ -136,9 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13914a111bb4bd24b986314677afcd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPeriod: 1
+  spawnPeriod: 1.2
   spawnStart: 5
-  spawnRadius: 20
+  spawnRadius: 30
   interseprotPrefab: {fileID: 1168525390260768, guid: 5c9daa5c9e8920345be36053c6cc0743,
     type: 2}
 --- !u!212 &212145088251482202

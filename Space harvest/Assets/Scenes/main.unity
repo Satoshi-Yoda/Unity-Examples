@@ -186,56 +186,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 13258609}
---- !u!1001 &42339829
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_Name
-      value: Laser Turret (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &156778554
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,56 +254,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 156778554}
---- !u!1001 &245371843
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_Name
-      value: Laser Turret (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &331671241
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +602,7 @@ RectTransform:
   m_Children:
   - {fileID: 1636241450}
   m_Father: {fileID: 927548421}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -822,7 +722,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 927548421}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -998,6 +898,7 @@ MonoBehaviour:
   gameOverText: {fileID: 607886157}
   gameOverButton: {fileID: 537485761}
   gameOverImage: {fileID: 1693377196}
+  youVinImage: {fileID: 1764042250}
   HarvesterPrototype: {fileID: 1044903873505674, guid: 27d6a115c5f890f45b4f1a0005c9f909,
     type: 2}
   SolarPanelPrototype: {fileID: 1729158929687844, guid: 071bd6a7d64ef7344bff4e625c138b4a,
@@ -1006,6 +907,7 @@ MonoBehaviour:
     type: 2}
   LaserTurretPrototype: {fileID: 1244558282720382, guid: a096e6d0dd79fef48bcb1216b48de2c0,
     type: 2}
+  enemyGenerator: {fileID: 840521789}
   minerals: 1000
 --- !u!1001 &703107488
 Prefab:
@@ -1052,56 +954,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdfa19cab19380246a32a712343f6b8a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &751940764
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_Name
-      value: Laser Turret (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &770820341
 GameObject:
@@ -1381,8 +1233,9 @@ MonoBehaviour:
   fighterDifficulty: 200
   interseptorDifficulty: 100
   mothershipDifficulty: 1000
-  mothershipTime: 1000
+  mothershipTime: 800
   startDifficulty: 200
+  lastWaveTime: 1111
   fighterPrefab: {fileID: 1892845100048506, guid: f7c08bd59b0d74041b97ad91b1ab6278,
     type: 2}
   interseptorPrefab: {fileID: 1168525390260768, guid: 5c9daa5c9e8920345be36053c6cc0743,
@@ -1434,7 +1287,7 @@ MonoBehaviour:
   areaRadius: 15
   groupRadius: 2.5
   minRadius: 4
-  totalMinerals: 25000
+  totalMinerals: 20000
   prefab: {fileID: 1254684328523676, guid: 292a515e97e3eb844b44f0d24ce4b7b7, type: 2}
 --- !u!4 &906383046
 Transform:
@@ -1548,6 +1401,7 @@ RectTransform:
   - {fileID: 13258610}
   - {fileID: 1775586774}
   - {fileID: 1693377197}
+  - {fileID: 1764042251}
   - {fileID: 607886156}
   - {fileID: 537485762}
   m_Father: {fileID: 0}
@@ -1746,106 +1600,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1194882776}
---- !u!1001 &1206562177
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_Name
-      value: Laser Turret (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1436000073
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_Name
-      value: Laser Turret (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1455196677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,102 +1908,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1693377196}
---- !u!1001 &1710225292
-Prefab:
+--- !u!1 &1764042250
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1745552425
-Prefab:
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1764042251}
+  - component: {fileID: 1764042253}
+  - component: {fileID: 1764042252}
+  m_Layer: 5
+  m_Name: You Vin Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1764042251
+RectTransform:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_Name
-      value: Laser Turret (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-  m_IsPrefabParent: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764042250}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 927548421}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 456, y: 57}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1764042252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764042250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 03f8cb2d52b6cd1448250fc08400225a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1764042253
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764042250}
 --- !u!1 &1775586773
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,106 +2158,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4392be947f14294ea8525511aa3f14e, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1854761465
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_Name
-      value: Laser Turret (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1893355828
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_Name
-      value: Laser Turret (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1897194883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,56 +2226,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1897194883}
---- !u!1001 &2023022957
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_Name
-      value: Laser Turret (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &2035811422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2703,7 +2279,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2742,7 +2318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7f106c23beb02428e33a8831924f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 12
 --- !u!1 &2050053939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,53 +2393,3 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2050053939}
---- !u!1001 &2102627743
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652244029280582, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_Name
-      value: Laser Turret (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
-  m_IsPrefabParent: 0
