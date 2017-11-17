@@ -8,6 +8,7 @@ public class EnergyLinkController : MonoBehaviour
 	public float maxTemperature;
 	public GameObject energyLinkVisual;
 	public GameObject energyLinkOverloadedVisual;
+	public GameObject energyBoom;
 
 	private GameObject visual;
 	private float maxEPS;
@@ -38,12 +39,14 @@ public class EnergyLinkController : MonoBehaviour
 			energy.previous = target;
 			energy.target = candidates[Random.Range(0, candidates.Count)];
 			if (temperature > maxTemperature) {
+				Instantiate(energyBoom, transform.position, Quaternion.identity);
 				return false;
 			} else {
 				temperature += 1;
 				return true;
 			}
 		} else {
+			Instantiate(energyBoom, transform.position, Quaternion.identity);
 			return false;
 		}
 	}

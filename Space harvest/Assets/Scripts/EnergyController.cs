@@ -21,18 +21,10 @@ public class EnergyController : MonoBehaviour
 		}
 
 		gameController.IncEnergy();
-		//StartCoroutine(RetargetCoroutine());
 
 		GetComponent<Rigidbody2D>().angularVelocity = 180.0f;
 		CalcVelocity();
 	}
-
-	// IEnumerator RetargetCoroutine() {
-	// 	while (true) {
-	// 		Retarget();
-	// 		yield return new WaitForSeconds(nextRetarget);
-	// 	}
-	// }
 
 	void CalcVelocity() {
 		if (target == null) return;

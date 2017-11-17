@@ -94,3 +94,4 @@ MonoBehaviour:
     type: 2}
   energyLinkOverloadedVisual: {fileID: 1232252783911014, guid: 2f13d0998d0471e40819ed6815ff249b,
     type: 2}
+  energyBoom: {fileID: 1203572395396048, guid: 5bfe6bea687aaa849bbd19dde7b3c842, type: 2}
