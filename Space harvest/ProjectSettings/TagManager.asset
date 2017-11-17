@@ -10,6 +10,7 @@ TagManager:
   - ConstructionBox
   - SolarPanel
   - LaserTurret
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -33,14 +34,14 @@ TagManager:
   - 
   - Asteroids
   - 
-  - 
+  - Enemies
   - 
   - 
   - Prototypes
   - 
   - 
-  - 
-  - 
+  - Laser
+  - Booms
   - 
   - 
   m_SortingLayers:

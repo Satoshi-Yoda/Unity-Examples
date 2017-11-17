@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\EnergyLinkController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\HarvesterContoller.cs" />
+     <Compile Include="Assets\Scripts\LaserTurretController.cs" />
      <Compile Include="Assets\Scripts\PrototypeController.cs" />
      <Compile Include="Assets\Scripts\SolarPanelController.cs" />
  <Reference Include="UnityEngine.UI">

@@ -6,11 +6,17 @@ public class EnemyFighterController : MonoBehaviour
 {
 	public float velocity;
 	public float thrust;
+	public float hull;
 	public GameObject explosionPrefab;
 
 	void Start() { }
 
 	void Update() {
+		if (hull <= 0) {
+			Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
+			Destroy(gameObject);
+		}
+
 		List<GameObject> targets = new List<GameObject>();
 		targets.AddRange(GameObject.FindGameObjectsWithTag("Harvester"));
 		targets.AddRange(GameObject.FindGameObjectsWithTag("SolarPanel"));
