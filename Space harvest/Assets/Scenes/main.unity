@@ -620,6 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mineralsText: {fileID: 494155360}
+  energyText: {fileID: 1455196679}
   HarvesterPrototype: {fileID: 1044903873505674, guid: 27d6a115c5f890f45b4f1a0005c9f909,
     type: 2}
   SolarPanelPrototype: {fileID: 1729158929687844, guid: 071bd6a7d64ef7344bff4e625c138b4a,

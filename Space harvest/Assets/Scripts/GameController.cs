@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
 	public Text mineralsText;
+	public Text energyText;
 	public GameObject HarvesterPrototype;
 	public GameObject SolarPanelPrototype;
 	public GameObject EnergyLinkPrototype;
@@ -14,9 +15,18 @@ public class GameController : MonoBehaviour
 	private GameObject activePrototype;
 
 	private float minerals = 0.0f;
+	private int energy = 0;
 
 	public void AddMinerals(float amount) {
 		minerals += amount;
+	}
+
+	public void IncEnergy() {
+		energy++;
+	}
+
+	public void DecEnergy() {
+		energy--;
 	}
 
 	public void SelectHarvesterPrototype() {
@@ -43,6 +53,8 @@ public class GameController : MonoBehaviour
 	
 	void Update() {
 		mineralsText.text = "" + Mathf.Round(minerals);
+		energyText.text = "" + energy;
+
 		if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
             Destroy(activePrototype);
 		}

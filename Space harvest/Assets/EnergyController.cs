@@ -9,10 +9,23 @@ public class EnergyController : MonoBehaviour
 	private EnergyLinkController previous = null;
 	private EnergyLinkController target = null;
 	private float nextRetarget;
+	private GameController gameController;
 
 	public void SetTarget(EnergyLinkController newTarget) {
 		target = newTarget;
 		CalcVelocity();
+	}
+
+	void Start() {
+		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+		if (gameControllerObject != null) {
+			gameController = gameControllerObject.GetComponent<GameController>();
+		}
+		if (gameController == null) {
+			Debug.Log("Can not find GameController object");
+		}
+
+		gameController.IncEnergy();
 	}
 
 	void Update() {
@@ -33,6 +46,7 @@ public class EnergyController : MonoBehaviour
 	void Retarget() {
 		if (target == null) {
 			Destroy(gameObject);
+			gameController.DecEnergy();
 			return;
 		}
 
@@ -58,6 +72,7 @@ public class EnergyController : MonoBehaviour
 			target = candidates[Random.Range(0, candidates.Count)];
 		} else {
 			Destroy(gameObject);
+			gameController.DecEnergy();
 			return;
 		}
 
