@@ -150,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 1792393675141624, guid: bdfa19cab19380246a32a712343f6b8a,
     type: 2}
+  constructionBoxPrefab: {fileID: 1840357873267008, guid: eb028dd36606f0343a124ae9b28fd522,
+    type: 2}
 --- !u!212 &212035691187073042
 SpriteRenderer:
   m_ObjectHideFlags: 1

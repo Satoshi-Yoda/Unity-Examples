@@ -10,6 +10,7 @@ public class EnergyController : MonoBehaviour
 	private GameController gameController;
 	public EnergyLinkController previous { get; set; }
 	public EnergyLinkController target { get; set; }
+	public ConstructionBoxController construction { get; set; }
 
 	void Start() {
 		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -27,19 +28,25 @@ public class EnergyController : MonoBehaviour
 	}
 
 	void CalcVelocity() {
-		if (target == null) return;
+		if (target == null && construction == null) return;
 
 		Vector3 selfPos = transform.position;
-		Vector3 targetPos = target.transform.position;
+		Vector3 targetPos = (construction != null) ? construction.transform.position : target.transform.position;
 		Vector2 delta = new Vector2(targetPos.x - selfPos.x, targetPos.y - selfPos.y);
 		float magnitude = delta.magnitude;
 		nextRetarget = magnitude / velocity;
-		Invoke("Retarget", nextRetarget);
+
+		if (construction != null) {
+			Invoke("Energize", nextRetarget);
+		} else {
+			Invoke("Retarget", nextRetarget);
+		}
+
 		GetComponent<Rigidbody2D>().velocity = delta.normalized * velocity;
 	}
 
 	void Retarget() {
-		if (target == null) {
+		if (target == null && construction == null) {
 			Destroy(gameObject);
 			gameController.DecEnergy();
 			return;
@@ -54,5 +61,15 @@ public class EnergyController : MonoBehaviour
 		}
 
 		CalcVelocity();
+	}
+
+	void Energize() {
+		if (construction != null) {
+			construction.Energize();
+		}
+
+		Destroy(gameObject);
+		gameController.DecEnergy();
+		return;
 	}
 }

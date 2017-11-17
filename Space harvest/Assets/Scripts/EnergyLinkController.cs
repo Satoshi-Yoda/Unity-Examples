@@ -13,6 +13,7 @@ public class EnergyLinkController : MonoBehaviour
 	private GameObject visual;
 	private float maxEPS;
 	private List<EnergyLinkController> nearby = new List<EnergyLinkController>();
+	private List<ConstructionBoxController> constructions = new List<ConstructionBoxController>();
 	private float temperature = 0.0f;
 	private bool lastOverloaded = false;
 
@@ -20,6 +21,11 @@ public class EnergyLinkController : MonoBehaviour
 		List<EnergyLinkController> candidates = new List<EnergyLinkController>();
 		EnergyLinkController target = energy.target;
 		EnergyLinkController previous = energy.previous;
+
+		if (constructions.Count > 0) {
+			energy.construction = constructions[Random.Range(0, constructions.Count)];
+			return true;
+		}
 
 		foreach (EnergyLinkController link in nearby) {
 			if (link != target && link != previous) {
@@ -79,12 +85,16 @@ public class EnergyLinkController : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "EnergyLink") {
 			nearby.Add(other.gameObject.GetComponent<EnergyLinkController>());
+		} else if (other.tag == "ConstructionBox") {
+			constructions.Add(other.gameObject.GetComponent<ConstructionBoxController>());
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.tag == "EnergyLink") {
 			nearby.Remove(other.gameObject.GetComponent<EnergyLinkController>());
+		} else if (other.tag == "ConstructionBox") {
+			constructions.Remove(other.gameObject.GetComponent<ConstructionBoxController>());
 		}
 	}
 }
