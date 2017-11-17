@@ -106,7 +106,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.12
+  m_Radius: 0.56
 --- !u!114 &114209753900907596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,6 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e6b8a9d3233ed4895350ea779386ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interval: 2
+  energyPrefab: {fileID: 1591264402028192, guid: 6e5bb946cff7ba545b7263bb2fadbf9a,
+    type: 2}
 --- !u!212 &212555373611076362
 SpriteRenderer:
   m_ObjectHideFlags: 1
