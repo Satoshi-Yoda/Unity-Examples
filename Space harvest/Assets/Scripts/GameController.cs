@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
 	void Update() {
 		mineralsText.text = "" + Mathf.Round(minerals);
 		energyText.text = "" + energy;
-		requisitionText.text = "" + requisition;
+		requisitionText.text = "" + requisition + "  " + Mathf.Round(Time.time) + " sec";
 		gameOverText.text = "Score: " + (requisition * 10 + totalEnergy + Mathf.Round(totalMinerals));
 
 		if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
