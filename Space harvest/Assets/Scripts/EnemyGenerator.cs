@@ -22,18 +22,18 @@ public class EnemyGenerator : MonoBehaviour
 	public float nextWave { get; private set; }
 
 	void Start() {
-		startTime = Time.time;
+		startTime = Time.timeSinceLevelLoad;
 		StartCoroutine(Spawn());
 	}
 
 	IEnumerator Spawn() {
-		nextWave = Time.time + delay;
+		nextWave = Time.timeSinceLevelLoad + delay;
 		yield return new WaitForSeconds(delay);
-		while (Time.time < lastWaveTime) {
-			float targetDifficulty = (Time.time - startTime - delay) * difficultyPerSecond + startDifficulty;
+		while (Time.timeSinceLevelLoad < lastWaveTime) {
+			float targetDifficulty = (Time.timeSinceLevelLoad - startTime - delay) * difficultyPerSecond + startDifficulty;
 			float difficulty = 0.0f;
 			float angle = Random.Range(0, 360);
-			if (Random.value < 0.25 && Time.time <= mothershipTime) {
+			if (Random.value < 0.25 && Time.timeSinceLevelLoad <= mothershipTime) {
 				while (difficulty <= targetDifficulty) {
 					Vector3 position = Quaternion.Euler(0, 0, angle) * new Vector3(radius + Random.Range(-2.9f, +2.9f), 0, 0);
 					angle += 7;
@@ -42,7 +42,7 @@ public class EnemyGenerator : MonoBehaviour
 				}
 			} else {
 				while (difficulty <= targetDifficulty) {
-					if (Time.time > mothershipTime) {
+					if (Time.timeSinceLevelLoad > mothershipTime) {
 						Vector3 position = Quaternion.Euler(0, 0, angle) * new Vector3(radius + Random.Range(-2.9f, +2.9f), 0, 0);
 						angle += 10;
 						Instantiate(mothershipPrefab, position, Quaternion.identity);
@@ -55,7 +55,7 @@ public class EnemyGenerator : MonoBehaviour
 					}
 				}
 			}
-			nextWave = Time.time + interval;
+			nextWave = Time.timeSinceLevelLoad + interval;
 			yield return new WaitForSeconds(interval);
 		}
 	}

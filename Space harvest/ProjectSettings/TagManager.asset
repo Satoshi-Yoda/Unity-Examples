@@ -11,6 +11,7 @@ TagManager:
   - SolarPanel
   - LaserTurret
   - Enemy
+  - Prototype
   layers:
   - Default
   - TransparentFX

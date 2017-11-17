@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
 	public GameObject EnergyLinkPrototype;
 	public GameObject LaserTurretPrototype;
 	public GameObject mainCamera;
+	public GameObject victorySoundPrefab;
 	public EnemyGenerator enemyGenerator;
 	public float minerals;
 
@@ -32,19 +33,23 @@ public class GameController : MonoBehaviour
 	private int requisition = 0;
 	private int totalEnergy = 0;
 	private float totalMinerals = 0.0f;
+	private bool gameEnd = false;
 
 	public void GameOver() {
 		gameOverText.gameObject.SetActive(true);
 		gameOverImage.SetActive(true);
 		gameOverButton.SetActive(true);
 		enemiesText.text = "";
+		gameEnd = true;
 	}
 
 	public void Win() {
+		Instantiate(victorySoundPrefab, Vector3.zero, Quaternion.identity);
 		gameOverText.gameObject.SetActive(true);
 		youVinImage.SetActive(true);
 		gameOverButton.SetActive(true);
 		enemiesText.text = "";
+		gameEnd = true;
 	}
 
 	public void Restart() {
@@ -111,9 +116,11 @@ public class GameController : MonoBehaviour
 	}
 
 	void Update() {
+		if (gameEnd) return;
+
 		mineralsText.text = "" + Mathf.Round(minerals);
 		energyText.text = "" + energy;
-		requisitionText.text = "" + requisition + "              " + Mathf.Round(Time.time) + " sec";
+		requisitionText.text = "" + requisition;
 		gameOverText.text = "Score: " + (requisition * 10 + totalEnergy + Mathf.Round(totalMinerals));
 
 		if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
@@ -131,12 +138,9 @@ public class GameController : MonoBehaviour
 
 		List<GameObject> targets = new List<GameObject>();
 		targets.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-		if (targets.Count == 0 && Time.time > enemyGenerator.lastWaveTime) {
-			Win();
-		}
 
 		if (targets.Count == 0) {
-			enemiesText.text = "Enemies approaching in " + Mathf.Round(enemyGenerator.nextWave - Time.time) + " seconds\nGet prepared!";
+			enemiesText.text = "Enemies approaching in " + Mathf.Round(enemyGenerator.nextWave - Time.timeSinceLevelLoad) + " seconds\nGet prepared!";
 			enemiesArrow.SetActive(false);
 		} else {
 			Vector3 avgPos = Vector3.zero;
@@ -150,6 +154,10 @@ public class GameController : MonoBehaviour
 			enemiesArrow.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 			enemiesText.text = "Watch out!";
 			enemiesArrow.SetActive(true);
+		}
+
+		if (targets.Count == 0 && Time.timeSinceLevelLoad > enemyGenerator.lastWaveTime) {
+			Win();
 		}
 	}
 }

@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114605507254541954}
   m_Layer: 25
   m_Name: Energy Link Prototype
-  m_TagString: Harvester
+  m_TagString: Prototype
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

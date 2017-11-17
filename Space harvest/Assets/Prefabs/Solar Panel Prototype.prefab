@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 114176484928661666}
   m_Layer: 25
   m_Name: Solar Panel Prototype
-  m_TagString: Harvester
+  m_TagString: Prototype
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

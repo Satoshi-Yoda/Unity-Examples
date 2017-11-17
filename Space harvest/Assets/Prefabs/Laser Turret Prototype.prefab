@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114213815492302322}
   m_Layer: 25
   m_Name: Laser Turret Prototype
-  m_TagString: Harvester
+  m_TagString: Prototype
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
