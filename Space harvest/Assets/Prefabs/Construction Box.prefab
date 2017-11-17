@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c10a2beec19d7428664d0f3d33c8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetEnergy: 100
+  targetEnergy: 10
   construction: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1,
     type: 2}
   progress: {fileID: 1453183439343920}

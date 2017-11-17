@@ -85,16 +85,20 @@ public class EnergyLinkController : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "EnergyLink") {
 			nearby.Add(other.gameObject.GetComponent<EnergyLinkController>());
+			// Debug.Log("Energy Link added");
 		} else if (other.tag == "ConstructionBox") {
 			constructions.Add(other.gameObject.GetComponent<ConstructionBoxController>());
+			// Debug.Log("ConstructionBox added");
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.tag == "EnergyLink") {
 			nearby.Remove(other.gameObject.GetComponent<EnergyLinkController>());
+			// Debug.Log("Energy Link removed");
 		} else if (other.tag == "ConstructionBox") {
 			constructions.Remove(other.gameObject.GetComponent<ConstructionBoxController>());
+			// Debug.Log("Construction Box removed");
 		}
 	}
 }
