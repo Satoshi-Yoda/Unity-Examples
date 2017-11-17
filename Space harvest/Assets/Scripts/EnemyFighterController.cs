@@ -7,13 +7,25 @@ public class EnemyFighterController : MonoBehaviour
 	public float velocity;
 	public float thrust;
 	public float hull;
+	public int requisition;
 	public GameObject explosionPrefab;
 
-	void Start() { }
+	private GameController gameController;
+
+	void Start() {
+		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+		if (gameControllerObject != null) {
+			gameController = gameControllerObject.GetComponent<GameController>();
+		}
+		if (gameController == null) {
+			Debug.Log("Can not find GameController object");
+		}
+	}
 
 	void Update() {
 		if (hull <= 0) {
 			Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
+			gameController.AddRequisition(requisition);
 			Destroy(gameObject);
 		}
 
@@ -43,6 +55,7 @@ public class EnemyFighterController : MonoBehaviour
 			gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity.normalized * velocity;
 			if (nearestDistance < 0.3) {
 				Instantiate(explosionPrefab, nearest.transform.position, Quaternion.identity);
+				gameController.AddRequisition(requisition);
 				Destroy(nearest.gameObject);
 			}
 		}

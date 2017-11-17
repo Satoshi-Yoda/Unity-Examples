@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\ConstructionBoxController.cs" />
      <Compile Include="Assets\Scripts\DestroyAfterTime.cs" />
      <Compile Include="Assets\Scripts\EnemyFighterController.cs" />
+     <Compile Include="Assets\Scripts\EnemyGenerator.cs" />
      <Compile Include="Assets\Scripts\EnemyMothershipController.cs" />
      <Compile Include="Assets\Scripts\EnergyController.cs" />
      <Compile Include="Assets\Scripts\EnergyLinkController.cs" />

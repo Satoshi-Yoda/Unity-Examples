@@ -120,7 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 0.75
   thrust: 3
-  hull: 400
+  hull: 200
+  requisition: 10
   explosionPrefab: {fileID: 1968983908613142, guid: 56d201a7ebc244241b46d6cd208a1761,
     type: 2}
 --- !u!212 &212066529478376156

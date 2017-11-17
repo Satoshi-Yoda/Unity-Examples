@@ -7,8 +7,10 @@ public class GameController : MonoBehaviour
 {
 	public Text mineralsText;
 	public Text energyText;
+	public Text requisitionText;
 	public Text spentMineralsText;
 	public Text spentEnergyText;
+	public Text spentRequisitionText;
 	public GameObject HarvesterPrototype;
 	public GameObject SolarPanelPrototype;
 	public GameObject EnergyLinkPrototype;
@@ -17,6 +19,7 @@ public class GameController : MonoBehaviour
 
 	private PrototypeController activePrototype;
 	private int energy = 0;
+	private int requisition = 0;
 
 	public void AddMinerals(float amount) {
 		minerals += amount;
@@ -37,6 +40,10 @@ public class GameController : MonoBehaviour
 
 	public void DecEnergy() {
 		energy--;
+	}
+
+	public void AddRequisition(int amount) {
+		requisition += amount;
 	}
 
 	public void SelectHarvesterPrototype() {
@@ -64,6 +71,7 @@ public class GameController : MonoBehaviour
 	void Update() {
 		mineralsText.text = "" + Mathf.Round(minerals);
 		energyText.text = "" + energy;
+		requisitionText.text = "" + requisition;
 
 		if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
             Destroy(activePrototype.gameObject);
