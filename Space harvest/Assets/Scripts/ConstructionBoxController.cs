@@ -26,12 +26,7 @@ public class ConstructionBoxController : MonoBehaviour
 
 	void Construct() {
 		Instantiate(construction, transform.position, Quaternion.identity);
-		transform.position = new Vector2(100000, 100000);
-		energy = 0;
-		Invoke("Remove", 1);
-	}
-
-	void Remove() {
+		gameObject.SetActive(false);
 		Destroy(this);
 	}
 
