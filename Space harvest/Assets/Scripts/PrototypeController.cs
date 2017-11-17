@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class PrototypeController : MonoBehaviour
 {
+	public int mineralsConsumption;
+	public int energyConsumption;
 	public GameObject objectPrefab;
 	public GameObject constructionBoxPrefab;
 
-	void Start() { }
-	
+	private GameController gameController;
+
+	void Start() {
+		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+		if (gameControllerObject != null) {
+			gameController = gameControllerObject.GetComponent<GameController>();
+		}
+		if (gameController == null) {
+			Debug.Log("Can not find GameController object");
+		}
+	}
+
 	void Update() {
 		Vector3 screenPoint = Input.mousePosition;
 		screenPoint.z = 10.0f;
@@ -16,8 +28,11 @@ public class PrototypeController : MonoBehaviour
 
 		if (screenPoint.y > 100) {
 			if (Input.GetMouseButtonDown(0)) {
-	            ConstructionBoxController constructionBox = Instantiate(constructionBoxPrefab, transform.position, Quaternion.identity).GetComponent<ConstructionBoxController>();
-	            constructionBox.construction = objectPrefab;
+				if (gameController.SpendMinerals(mineralsConsumption)) {
+		            ConstructionBoxController constructionBox = Instantiate(constructionBoxPrefab, transform.position, Quaternion.identity).GetComponent<ConstructionBoxController>();
+		            constructionBox.construction = objectPrefab;
+		            constructionBox.targetEnergy = energyConsumption;
+		        }
 			}
 		}
 	}

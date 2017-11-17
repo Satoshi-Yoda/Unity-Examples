@@ -11,14 +11,22 @@ public class GameController : MonoBehaviour
 	public GameObject SolarPanelPrototype;
 	public GameObject EnergyLinkPrototype;
 	public GameObject LaserTurretPrototype;
+	public float minerals;
 
 	private GameObject activePrototype;
-
-	private float minerals = 0.0f;
 	private int energy = 0;
 
 	public void AddMinerals(float amount) {
 		minerals += amount;
+	}
+
+	public bool SpendMinerals(float amount) {
+		if (minerals >= amount) {
+			minerals -= amount;
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public void IncEnergy() {
