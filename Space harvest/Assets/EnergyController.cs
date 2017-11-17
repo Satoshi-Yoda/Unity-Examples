@@ -6,15 +6,10 @@ public class EnergyController : MonoBehaviour
 {
 	public float velocity;
 
-	private EnergyLinkController previous = null;
-	private EnergyLinkController target = null;
-	private float nextRetarget = 0;
+	private float nextRetarget = 0.0f;
 	private GameController gameController;
-
-	public void SetTarget(EnergyLinkController newTarget) {
-		target = newTarget;
-		CalcVelocity();
-	}
+	public EnergyLinkController previous { get; set; }
+	public EnergyLinkController target { get; set; }
 
 	void Start() {
 		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -26,17 +21,18 @@ public class EnergyController : MonoBehaviour
 		}
 
 		gameController.IncEnergy();
-		StartCoroutine(RetargetCoroutine());
+		//StartCoroutine(RetargetCoroutine());
 
 		GetComponent<Rigidbody2D>().angularVelocity = 180.0f;
+		CalcVelocity();
 	}
 
-	IEnumerator RetargetCoroutine() {
-		while (true) {
-			Retarget();
-			yield return new WaitForSeconds(nextRetarget);
-		}
-	}
+	// IEnumerator RetargetCoroutine() {
+	// 	while (true) {
+	// 		Retarget();
+	// 		yield return new WaitForSeconds(nextRetarget);
+	// 	}
+	// }
 
 	void CalcVelocity() {
 		if (target == null) return;
@@ -46,6 +42,7 @@ public class EnergyController : MonoBehaviour
 		Vector2 delta = new Vector2(targetPos.x - selfPos.x, targetPos.y - selfPos.y);
 		float magnitude = delta.magnitude;
 		nextRetarget = magnitude / velocity;
+		Invoke("Retarget", nextRetarget);
 		GetComponent<Rigidbody2D>().velocity = delta.normalized * velocity;
 	}
 
@@ -56,27 +53,9 @@ public class EnergyController : MonoBehaviour
 			return;
 		}
 
-		List<EnergyLinkController> nearby = target.GetNearby();
-		List<EnergyLinkController> candidates = new List<EnergyLinkController>();
+		bool success = target.Retarget(this);
 
-		foreach (EnergyLinkController link in nearby) {
-			if (link != target && link != previous) {
-				candidates.Add(link);
-			}
-		}
-
-		if (candidates.Count == 0) {
-			foreach (EnergyLinkController link in nearby) {
-				if (link != target) {
-					candidates.Add(link);
-				}
-			}
-		}
-
-		if (candidates.Count > 0) {
-			previous = target;
-			target = candidates[Random.Range(0, candidates.Count)];
-		} else {
+		if (!success) {
 			Destroy(gameObject);
 			gameController.DecEnergy();
 			return;
