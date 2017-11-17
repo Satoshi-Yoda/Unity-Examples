@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
 	public Text spentEnergyText;
 	public Text spentRequisitionText;
 	public Text gameOverText;
+	public Text enemiesText;
+	public Text buildingText;
+	public GameObject enemiesArrow;
 	public GameObject gameOverButton;
 	public GameObject gameOverImage;
 	public GameObject youVinImage;
@@ -20,6 +23,7 @@ public class GameController : MonoBehaviour
 	public GameObject SolarPanelPrototype;
 	public GameObject EnergyLinkPrototype;
 	public GameObject LaserTurretPrototype;
+	public GameObject mainCamera;
 	public EnemyGenerator enemyGenerator;
 	public float minerals;
 
@@ -33,12 +37,14 @@ public class GameController : MonoBehaviour
 		gameOverText.gameObject.SetActive(true);
 		gameOverImage.SetActive(true);
 		gameOverButton.SetActive(true);
+		enemiesText.text = "";
 	}
 
 	public void Win() {
 		gameOverText.gameObject.SetActive(true);
 		youVinImage.SetActive(true);
 		gameOverButton.SetActive(true);
+		enemiesText.text = "";
 	}
 
 	public void Restart() {
@@ -75,21 +81,25 @@ public class GameController : MonoBehaviour
 	public void SelectHarvesterPrototype() {
 		if (activePrototype != null) Destroy(activePrototype.gameObject);
 		activePrototype = Instantiate(HarvesterPrototype, new Vector3(999, 999, 0), Quaternion.identity).GetComponent<PrototypeController>();
+		buildingText.text = "Harvester";
 	}
 
 	public void SelectSolarPanelPrototype() {
 		if (activePrototype != null) Destroy(activePrototype.gameObject);
 		activePrototype = Instantiate(SolarPanelPrototype, new Vector3(999, 999, 0), Quaternion.identity).GetComponent<PrototypeController>();
+		buildingText.text = "Solar Panel";
 	}
 
 	public void SelectEnergyLinkPrototype() {
 		if (activePrototype != null) Destroy(activePrototype.gameObject);
 		activePrototype = Instantiate(EnergyLinkPrototype, new Vector3(999, 999, 0), Quaternion.identity).GetComponent<PrototypeController>();
+		buildingText.text = "Energy Link";
 	}
 
 	public void SelectLaserTurretPrototype() {
 		if (activePrototype != null) Destroy(activePrototype.gameObject);
 		activePrototype = Instantiate(LaserTurretPrototype, new Vector3(999, 999, 0), Quaternion.identity).GetComponent<PrototypeController>();
+		buildingText.text = "Laser Turret";
 	}
 
 	void Start() {
@@ -97,6 +107,7 @@ public class GameController : MonoBehaviour
 		gameOverImage.SetActive(false);
 		youVinImage.SetActive(false);
 		gameOverButton.SetActive(false);
+		buildingText.text = "";
 	}
 
 	void Update() {
@@ -107,6 +118,7 @@ public class GameController : MonoBehaviour
 
 		if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
             Destroy(activePrototype.gameObject);
+            buildingText.text = "";
 		}
 
 		if (activePrototype != null) {
@@ -121,6 +133,23 @@ public class GameController : MonoBehaviour
 		targets.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
 		if (targets.Count == 0 && Time.time > enemyGenerator.lastWaveTime) {
 			Win();
+		}
+
+		if (targets.Count == 0) {
+			enemiesText.text = "Enemies approaching in " + Mathf.Round(enemyGenerator.nextWave - Time.time) + " seconds\nGet prepared!";
+			enemiesArrow.SetActive(false);
+		} else {
+			Vector3 avgPos = Vector3.zero;
+			foreach (GameObject enemy in targets) {
+				avgPos += enemy.transform.position;
+			}
+			avgPos /= targets.Count;
+			Vector3 cameraPos = mainCamera.transform.position + new Vector3(0, 5.5f, 0);
+			Vector3 direction = avgPos - cameraPos;
+			float angle = -Mathf.Atan2(direction.x, direction.y) * 180 / Mathf.PI;
+			enemiesArrow.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+			enemiesText.text = "Watch out!";
+			enemiesArrow.SetActive(true);
 		}
 	}
 }

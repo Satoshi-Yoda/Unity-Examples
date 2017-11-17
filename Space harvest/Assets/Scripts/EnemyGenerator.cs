@@ -19,13 +19,15 @@ public class EnemyGenerator : MonoBehaviour
 	public GameObject mothershipPrefab;
 
 	private float startTime;
+	public float nextWave { get; private set; }
 
 	void Start() {
 		startTime = Time.time;
 		StartCoroutine(Spawn());
 	}
-	
+
 	IEnumerator Spawn() {
+		nextWave = Time.time + delay;
 		yield return new WaitForSeconds(delay);
 		while (Time.time < lastWaveTime) {
 			float targetDifficulty = (Time.time - startTime - delay) * difficultyPerSecond + startDifficulty;
@@ -53,6 +55,7 @@ public class EnemyGenerator : MonoBehaviour
 					}
 				}
 			}
+			nextWave = Time.time + interval;
 			yield return new WaitForSeconds(interval);
 		}
 	}
