@@ -7,13 +7,15 @@ public class GameController : MonoBehaviour
 {
 	public Text mineralsText;
 	public Text energyText;
+	public Text spentMineralsText;
+	public Text spentEnergyText;
 	public GameObject HarvesterPrototype;
 	public GameObject SolarPanelPrototype;
 	public GameObject EnergyLinkPrototype;
 	public GameObject LaserTurretPrototype;
 	public float minerals;
 
-	private GameObject activePrototype;
+	private PrototypeController activePrototype;
 	private int energy = 0;
 
 	public void AddMinerals(float amount) {
@@ -39,22 +41,22 @@ public class GameController : MonoBehaviour
 
 	public void SelectHarvesterPrototype() {
 		Destroy(activePrototype);
-		activePrototype = Instantiate(HarvesterPrototype, Vector3.zero, Quaternion.identity);
+		activePrototype = Instantiate(HarvesterPrototype, Vector3.zero, Quaternion.identity).GetComponent<PrototypeController>();
 	}
 
 	public void SelectSolarPanelPrototype() {
 		Destroy(activePrototype);
-		activePrototype = Instantiate(SolarPanelPrototype, Vector3.zero, Quaternion.identity);
+		activePrototype = Instantiate(SolarPanelPrototype, Vector3.zero, Quaternion.identity).GetComponent<PrototypeController>();
 	}
 
 	public void SelectEnergyLinkPrototype() {
 		Destroy(activePrototype);
-		activePrototype = Instantiate(EnergyLinkPrototype, Vector3.zero, Quaternion.identity);
+		activePrototype = Instantiate(EnergyLinkPrototype, Vector3.zero, Quaternion.identity).GetComponent<PrototypeController>();
 	}
 
 	public void SelectLaserTurretPrototype() {
 		Destroy(activePrototype);
-		activePrototype = Instantiate(LaserTurretPrototype, Vector3.zero, Quaternion.identity);
+		activePrototype = Instantiate(LaserTurretPrototype, Vector3.zero, Quaternion.identity).GetComponent<PrototypeController>();
 	}
 
 	void Start() { }
@@ -64,7 +66,15 @@ public class GameController : MonoBehaviour
 		energyText.text = "" + energy;
 
 		if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
-            Destroy(activePrototype);
+            Destroy(activePrototype.gameObject);
+		}
+
+		if (activePrototype != null) {
+			spentMineralsText.text = "-" + activePrototype.mineralsConsumption;
+			spentEnergyText.text = "-" + activePrototype.energyConsumption;
+		} else {
+			spentMineralsText.text = "";
+			spentEnergyText.text = "";
 		}
 	}
 }
