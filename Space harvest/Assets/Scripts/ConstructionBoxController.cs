@@ -35,8 +35,7 @@ public class ConstructionBoxController : MonoBehaviour
 
 	void Construct() {
 		Instantiate(construction, transform.position, Quaternion.identity);
-		gameObject.SetActive(false);
-		Destroy(this);
+		Destroy(gameObject);
 	}
 
 	void UpdateBar() {
