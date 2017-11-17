@@ -9,6 +9,7 @@ public class ConstructionBoxController : MonoBehaviour
 	public GameObject progress;
 
 	private int energy = 0;
+	private int willEnergy = 0;
 
 	public void Energize() {
 		energy++;
@@ -18,6 +19,14 @@ public class ConstructionBoxController : MonoBehaviour
 		if (energy >= targetEnergy) {
 			Construct();
 		}
+	}
+
+	public void WillEnergize() {
+		willEnergy++;
+	}
+
+	public bool NeedMore() {
+		return willEnergy < targetEnergy;
 	}
 
 	void Start() {
@@ -31,6 +40,6 @@ public class ConstructionBoxController : MonoBehaviour
 	}
 
 	void UpdateBar() {
-		progress.transform.localScale = new Vector3((3.0f * energy) / targetEnergy, 3, 3);
+		progress.transform.localScale = new Vector3((1.0f * energy) / targetEnergy, 1, 1);
 	}
 }

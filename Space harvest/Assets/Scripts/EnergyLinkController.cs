@@ -22,8 +22,17 @@ public class EnergyLinkController : MonoBehaviour
 		EnergyLinkController target = energy.target;
 		EnergyLinkController previous = energy.previous;
 
-		if (constructions.Count > 0) {
-			energy.construction = constructions[Random.Range(0, constructions.Count)];
+		List<ConstructionBoxController> needMoreConstructions = new List<ConstructionBoxController>();
+		foreach (ConstructionBoxController construnction in constructions) {
+			if (construnction.NeedMore()) {
+				needMoreConstructions.Add(construnction);
+			}
+		}
+
+		if (needMoreConstructions.Count > 0) {
+			ConstructionBoxController construnction = needMoreConstructions[Random.Range(0, needMoreConstructions.Count)];
+			energy.construction = construnction;
+			construnction.WillEnergize();
 			return true;
 		}
 
