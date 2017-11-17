@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HarvesterContoller : MonoBehaviour
 {
-	public float rate;
+	public float interval;
 
 	private GameController gameController;
 	private List<AsteroidController> asteroids = new List<AsteroidController>();
@@ -21,7 +21,7 @@ public class HarvesterContoller : MonoBehaviour
 	
 	void Update() {
 		foreach (AsteroidController asteroid in asteroids) {
-			float amount = Time.deltaTime * rate / asteroids.Count;
+			float amount = Time.deltaTime / (interval * asteroids.Count);
 			asteroid.Harvest(amount);
 			gameController.AddMinerals(amount);
 		}
