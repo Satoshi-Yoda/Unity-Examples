@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPeriod: 1
   spawnStart: 5
+  spawnRadius: 20
   interseprotPrefab: {fileID: 1168525390260768, guid: 5c9daa5c9e8920345be36053c6cc0743,
     type: 2}
 --- !u!212 &212145088251482202

@@ -5,6 +5,7 @@ using UnityEngine;
 public class HarvesterContoller : MonoBehaviour
 {
 	public float interval;
+	public GameObject explosionPrefab;
 
 	private GameController gameController;
 	private List<AsteroidController> asteroids = new List<AsteroidController>();
@@ -24,6 +25,11 @@ public class HarvesterContoller : MonoBehaviour
 			float amount = Time.deltaTime / (interval * asteroids.Count);
 			asteroid.Harvest(amount);
 			gameController.AddMinerals(amount);
+		}
+
+		if (asteroids.Count == 0) {
+			Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
+			Destroy(gameObject);
 		}
 	}
 

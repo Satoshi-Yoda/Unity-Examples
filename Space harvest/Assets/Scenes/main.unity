@@ -229,6 +229,10 @@ Prefab:
       propertyPath: m_Name
       value: Laser Turret (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
   m_IsPrefabParent: 0
@@ -342,6 +346,10 @@ Prefab:
     - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
       propertyPath: m_Name
       value: Laser Turret (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
@@ -1088,6 +1096,10 @@ Prefab:
       propertyPath: m_Name
       value: Laser Turret (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
   m_IsPrefabParent: 0
@@ -1362,14 +1374,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1faba16a652302447a0efa83fa9e4846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 25
-  delay: 10
-  interval: 10
-  difficultyPerSecond: 5
+  radius: 40
+  delay: 250
+  interval: 50
+  difficultyPerSecond: 3
   fighterDifficulty: 200
   interseptorDifficulty: 100
   mothershipDifficulty: 1000
-  mothershipTime: 100
+  mothershipTime: 1000
+  startDifficulty: 200
   fighterPrefab: {fileID: 1892845100048506, guid: f7c08bd59b0d74041b97ad91b1ab6278,
     type: 2}
   interseptorPrefab: {fileID: 1168525390260768, guid: 5c9daa5c9e8920345be36053c6cc0743,
@@ -1420,6 +1433,8 @@ MonoBehaviour:
   groupSize: 20
   areaRadius: 15
   groupRadius: 2.5
+  minRadius: 4
+  totalMinerals: 25000
   prefab: {fileID: 1254684328523676, guid: 292a515e97e3eb844b44f0d24ce4b7b7, type: 2}
 --- !u!4 &906383046
 Transform:
@@ -1774,6 +1789,10 @@ Prefab:
       propertyPath: m_Name
       value: Laser Turret (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
   m_IsPrefabParent: 0
@@ -1819,6 +1838,10 @@ Prefab:
     - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
       propertyPath: m_Name
       value: Laser Turret (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
@@ -2170,6 +2193,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
   m_IsPrefabParent: 0
@@ -2215,6 +2242,10 @@ Prefab:
     - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
       propertyPath: m_Name
       value: Laser Turret (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
@@ -2444,6 +2475,10 @@ Prefab:
       propertyPath: m_Name
       value: Laser Turret (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
   m_IsPrefabParent: 0
@@ -2489,6 +2524,10 @@ Prefab:
     - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
       propertyPath: m_Name
       value: Laser Turret (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
@@ -2603,6 +2642,10 @@ Prefab:
     - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
       propertyPath: m_Name
       value: Laser Turret (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
@@ -2816,6 +2859,10 @@ Prefab:
     - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
       propertyPath: m_Name
       value: Laser Turret (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4529d5cac589bc240ba172302807dce1, type: 2}

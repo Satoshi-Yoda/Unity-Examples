@@ -12,6 +12,7 @@ public class EnemyGenerator : MonoBehaviour
 	public float interseptorDifficulty;
 	public float mothershipDifficulty;
 	public float mothershipTime;
+	public float startDifficulty;
 	public GameObject fighterPrefab;
 	public GameObject interseptorPrefab;
 	public GameObject mothershipPrefab;
@@ -26,7 +27,7 @@ public class EnemyGenerator : MonoBehaviour
 	IEnumerator Spawn() {
 		yield return new WaitForSeconds(delay);
 		while (true) {
-			float targetDifficulty = (Time.time - startTime) * difficultyPerSecond;
+			float targetDifficulty = (Time.time - startTime - delay) * difficultyPerSecond + startDifficulty;
 			float difficulty = 0.0f;
 			float angle = Random.Range(0, 360);
 			if (Random.value < 0.25) {

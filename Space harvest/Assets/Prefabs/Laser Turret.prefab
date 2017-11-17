@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ef5408c4cb6f541a344bd620741406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dps: 10
-  distance: 10
+  dps: 40
+  distance: 12
   flarePrefab: {fileID: 1144014970052140, guid: 3ea674cf6e58fa540ab32105c152cddf,
     type: 2}
   rayPrefab: {fileID: 1313788421092950, guid: 9923a87730bab234fb58ab3d8e42648e, type: 2}
