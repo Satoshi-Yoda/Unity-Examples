@@ -8,7 +8,7 @@ public class EnergyController : MonoBehaviour
 
 	private EnergyLinkController previous = null;
 	private EnergyLinkController target = null;
-	private float nextRetarget;
+	private float nextRetarget = 0;
 	private GameController gameController;
 
 	public void SetTarget(EnergyLinkController newTarget) {
@@ -26,10 +26,16 @@ public class EnergyController : MonoBehaviour
 		}
 
 		gameController.IncEnergy();
+		StartCoroutine(RetargetCoroutine());
+
+		GetComponent<Rigidbody2D>().angularVelocity = 180.0f;
 	}
 
-	void Update() {
-		if (Time.time > nextRetarget) Retarget();
+	IEnumerator RetargetCoroutine() {
+		while (true) {
+			Retarget();
+			yield return new WaitForSeconds(nextRetarget);
+		}
 	}
 
 	void CalcVelocity() {
@@ -39,7 +45,7 @@ public class EnergyController : MonoBehaviour
 		Vector3 targetPos = target.transform.position;
 		Vector2 delta = new Vector2(targetPos.x - selfPos.x, targetPos.y - selfPos.y);
 		float magnitude = delta.magnitude;
-		nextRetarget = Time.time + magnitude / velocity;
+		nextRetarget = magnitude / velocity;
 		GetComponent<Rigidbody2D>().velocity = delta.normalized * velocity;
 	}
 
