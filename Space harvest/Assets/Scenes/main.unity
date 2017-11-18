@@ -1386,7 +1386,7 @@ MonoBehaviour:
   difficultyPerSecond: 5
   fighterDifficulty: 200
   interseptorDifficulty: 100
-  mothershipDifficulty: 1000
+  mothershipDifficulty: 1200
   mothershipTime: 800
   startDifficulty: 200
   lastWaveTime: 1111
@@ -1441,7 +1441,7 @@ MonoBehaviour:
   areaRadius: 15
   groupRadius: 2.5
   minRadius: 4
-  totalMinerals: 20000
+  totalMinerals: 25000
   prefab: {fileID: 1254684328523676, guid: 292a515e97e3eb844b44f0d24ce4b7b7, type: 2}
 --- !u!4 &906383046
 Transform:
