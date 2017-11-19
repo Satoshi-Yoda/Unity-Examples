@@ -8,6 +8,7 @@ public class EnemyFighterController : MonoBehaviour
 	public float thrust;
 	public float hull;
 	public int requisition;
+	public float destroyDistance;
 	public GameObject explosionPrefab;
 
 	private GameController gameController;
@@ -34,7 +35,9 @@ public class EnemyFighterController : MonoBehaviour
 		targets.AddRange(GameObject.FindGameObjectsWithTag("SolarPanel"));
 		targets.AddRange(GameObject.FindGameObjectsWithTag("EnergyLink"));
 		targets.AddRange(GameObject.FindGameObjectsWithTag("LaserTurret"));
-		targets.AddRange(GameObject.FindGameObjectsWithTag("ConstructionBox"));
+		if (targets.Count == 0) {
+			targets.AddRange(GameObject.FindGameObjectsWithTag("ConstructionBox"));
+		}
 
 		if (targets.Count > 0) {
 			GameObject nearest = targets[0];
@@ -53,7 +56,7 @@ public class EnemyFighterController : MonoBehaviour
 
 			if (gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > velocity)
 			gameObject.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity.normalized * velocity;
-			if (nearestDistance < 0.3) {
+			if (nearestDistance < destroyDistance) {
 				Instantiate(explosionPrefab, nearest.transform.position, Quaternion.identity);
 				gameController.AddRequisition(requisition);
 				Destroy(nearest.gameObject);

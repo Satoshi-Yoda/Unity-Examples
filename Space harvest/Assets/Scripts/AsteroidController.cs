@@ -20,19 +20,28 @@ public class AsteroidController : MonoBehaviour
 		minerals -= amount;
 	}
 
+	public bool Empty() {
+		return (minerals <= 0);
+	}
+
 	void Start() {
 		CreateVisual();
 	}
 
 	void Update() {
 		if (minerals <= 0) {
-			Destroy(gameObject);
+			Destroy(visual);
+			Invoke("DestroyGameObject", 5);
 		} else {
 			int newSize = CalcSize();
 			if (newSize != size) {
 				CreateVisual();
 			}
 		}
+	}
+
+	void DestroyGameObject() {
+		Destroy(gameObject);
 	}
 
 	void CreateVisual() {

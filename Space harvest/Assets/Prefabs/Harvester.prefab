@@ -121,9 +121,8 @@ MonoBehaviour:
   interval: 2
   powerUpDelay: 0.5
   power: 1
-  explosionPrefab: {fileID: 1968983908613142, guid: 56d201a7ebc244241b46d6cd208a1761,
-    type: 2}
   rayPrefab: {fileID: 1483970874661242, guid: de903bfe562c4f74eadc8d14abc266a9, type: 2}
+  beepPrefab: {fileID: 1418235542345622, guid: 5fed81d9465c68e4fad3696ee51040c5, type: 2}
 --- !u!212 &212350063062727436
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1383,10 +1383,10 @@ MonoBehaviour:
   radius: 40
   delay: 250
   interval: 50
-  difficultyPerSecond: 5
+  difficultyPerSecond: 4
   fighterDifficulty: 200
   interseptorDifficulty: 100
-  mothershipDifficulty: 1200
+  mothershipDifficulty: 1500
   mothershipTime: 800
   startDifficulty: 200
   lastWaveTime: 1111

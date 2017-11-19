@@ -7,13 +7,15 @@ public class HarvesterContoller : MonoBehaviour
 	public float interval;
 	public float powerUpDelay;
 	public float power;
-	public GameObject explosionPrefab;
 	public GameObject rayPrefab;
+	public GameObject beepPrefab;
 
 	private GameController gameController;
 	private List<AsteroidController> asteroids = new List<AsteroidController>();
 	private GameObject ray;
 	private AsteroidController target;
+	private float creationTime;
+	private float minLifeTime = 5.0f;
 
 	void Start () {
 		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -24,6 +26,7 @@ public class HarvesterContoller : MonoBehaviour
 			Debug.Log("Can not find GameController object");
 		}
 
+		creationTime = Time.timeSinceLevelLoad;
 		StartCoroutine(ChangeTarget());
 	}
 
@@ -36,15 +39,17 @@ public class HarvesterContoller : MonoBehaviour
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.tag == "Asteroid") {
 			asteroids.Remove(other.gameObject.GetComponent<AsteroidController>());
-			if (asteroids.Count == 0) {
-				Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
-				Destroy(gameObject);
-			}
 		}
 	}
 
 	IEnumerator ChangeTarget() {
 		while (true) {
+			List<AsteroidController> notEmpty = new List<AsteroidController>();
+			foreach (AsteroidController asteroid in asteroids) {
+				if (!asteroid.Empty()) notEmpty.Add(asteroid);
+			}
+			asteroids = notEmpty;
+
 			if (asteroids.Count > 0) {
 				AsteroidController oldTarget = target;
 				for (int attempt = 0; attempt < 99; attempt++) {
@@ -69,6 +74,10 @@ public class HarvesterContoller : MonoBehaviour
 			} else {
 				target = null;
 				Destroy(ray);
+				if (Time.timeSinceLevelLoad > creationTime + minLifeTime) {
+					Instantiate(beepPrefab, gameObject.transform.position, Quaternion.identity);
+					Destroy(gameObject);
+				}
 				yield return new WaitForSeconds(powerUpDelay);
 			}
 		}

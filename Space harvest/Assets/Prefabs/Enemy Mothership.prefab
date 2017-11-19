@@ -123,6 +123,7 @@ MonoBehaviour:
   thrust: 1
   hull: 1000
   requisition: 100
+  destroyDistance: 0.7
   explosionPrefab: {fileID: 1968983908613142, guid: 56d201a7ebc244241b46d6cd208a1761,
     type: 2}
 --- !u!114 &114496982630685488
