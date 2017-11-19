@@ -1380,9 +1380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1faba16a652302447a0efa83fa9e4846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 40
+  radius: 50
   delay: 250
-  interval: 50
+  interval: 70
   difficultyPerSecond: 4
   fighterDifficulty: 200
   interseptorDifficulty: 100
