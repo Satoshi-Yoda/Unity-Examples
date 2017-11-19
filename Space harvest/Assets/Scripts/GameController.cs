@@ -118,8 +118,22 @@ public class GameController : MonoBehaviour
 	void Update() {
 		if (gameEnd) return;
 
-		mineralsText.text = "" + Mathf.Round(minerals);
-		energyText.text = "" + energy;
+		List<GameObject> harvesters = new List<GameObject>();
+		harvesters.AddRange(GameObject.FindGameObjectsWithTag("Harvester"));
+		float harvestPower = 0;
+		if (harvesters.Count > 0) {
+			harvestPower = harvesters.Count * harvesters[0].GetComponent<HarvesterController>().power / harvesters[0].GetComponent<HarvesterController>().interval;
+		}
+
+		List<GameObject> solarPanels = new List<GameObject>();
+		solarPanels.AddRange(GameObject.FindGameObjectsWithTag("SolarPanel"));
+		float energyPower = 0;
+		if (solarPanels.Count > 0) {
+			energyPower = solarPanels.Count / solarPanels[0].GetComponent<SolarPanelController>().interval;
+		}
+
+		mineralsText.text = "" + Mathf.Round(minerals) + (harvestPower > 0 ? (" +" + harvestPower) : "");
+		energyText.text = "" + energy + (energyPower > 0 ? (" +" + energyPower) : "");
 		requisitionText.text = "" + requisition;
 		gameOverText.text = "Score: " + (requisition * 10 + totalEnergy + Mathf.Round(totalMinerals));
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HarvesterContoller : MonoBehaviour
+public class HarvesterController : MonoBehaviour
 {
 	public float interval;
 	public float powerUpDelay;

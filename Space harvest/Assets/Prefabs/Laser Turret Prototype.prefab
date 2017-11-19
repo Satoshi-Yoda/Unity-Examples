@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mineralsConsumption: 100
-  energyConsumption: 200
+  energyConsumption: 150
   objectPrefab: {fileID: 1710116476482932, guid: 4529d5cac589bc240ba172302807dce1,
     type: 2}
   constructionBoxPrefab: {fileID: 1840357873267008, guid: eb028dd36606f0343a124ae9b28fd522,
