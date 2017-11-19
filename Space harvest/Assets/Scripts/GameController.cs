@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
 	public GameObject SolarPanelPrototype;
 	public GameObject EnergyLinkPrototype;
 	public GameObject LaserTurretPrototype;
+	public GameObject BombPrototype;
 	public GameObject mainCamera;
 	public GameObject victorySoundPrefab;
 	public EnemyGenerator enemyGenerator;
@@ -105,6 +106,12 @@ public class GameController : MonoBehaviour
 		if (activePrototype != null) Destroy(activePrototype.gameObject);
 		activePrototype = Instantiate(LaserTurretPrototype, new Vector3(999, 999, 0), Quaternion.identity).GetComponent<PrototypeController>();
 		buildingText.text = "Laser Turret";
+	}
+
+	public void SelectBombPrototype() {
+		if (activePrototype != null) Destroy(activePrototype.gameObject);
+		activePrototype = Instantiate(BombPrototype, new Vector3(999, 999, 0), Quaternion.identity).GetComponent<PrototypeController>();
+		buildingText.text = "Bomb";
 	}
 
 	void Start() {

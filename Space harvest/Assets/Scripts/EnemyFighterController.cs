@@ -35,6 +35,7 @@ public class EnemyFighterController : MonoBehaviour
 		targets.AddRange(GameObject.FindGameObjectsWithTag("SolarPanel"));
 		targets.AddRange(GameObject.FindGameObjectsWithTag("EnergyLink"));
 		targets.AddRange(GameObject.FindGameObjectsWithTag("LaserTurret"));
+		targets.AddRange(GameObject.FindGameObjectsWithTag("Bomb"));
 		if (targets.Count == 0) {
 			targets.AddRange(GameObject.FindGameObjectsWithTag("ConstructionBox"));
 		}
@@ -59,6 +60,10 @@ public class EnemyFighterController : MonoBehaviour
 			if (nearestDistance < destroyDistance) {
 				Instantiate(explosionPrefab, nearest.transform.position, Quaternion.identity);
 				gameController.AddRequisition(requisition);
+				BombController bomb = nearest.gameObject.GetComponent<BombController>();
+				if (bomb != null) {
+					bomb.WillDestroy();
+				}
 				Destroy(nearest.gameObject);
 			}
 		} else {

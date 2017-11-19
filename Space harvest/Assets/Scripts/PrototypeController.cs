@@ -30,8 +30,10 @@ public class PrototypeController : MonoBehaviour
 			if (Input.GetMouseButtonDown(0)) {
 				if (gameController.SpendMinerals(mineralsConsumption)) {
 		            ConstructionBoxController constructionBox = Instantiate(constructionBoxPrefab, transform.position, Quaternion.identity).GetComponent<ConstructionBoxController>();
-		            constructionBox.construction = objectPrefab;
-		            constructionBox.targetEnergy = energyConsumption;
+		            if (constructionBox != null) {
+			            constructionBox.construction = objectPrefab;
+			            constructionBox.targetEnergy = energyConsumption;
+			        }
 		        }
 			}
 		}

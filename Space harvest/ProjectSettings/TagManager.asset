@@ -12,6 +12,7 @@ TagManager:
   - LaserTurret
   - Enemy
   - Prototype
+  - Bomb
   layers:
   - Default
   - TransparentFX
