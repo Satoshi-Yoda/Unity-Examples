@@ -960,7 +960,7 @@ MonoBehaviour:
   victorySoundPrefab: {fileID: 1483368075099272, guid: 698fa35ded3a3a04d8ae8ca12194edf4,
     type: 2}
   enemyGenerator: {fileID: 840521789}
-  minerals: 1000
+  minerals: 250
 --- !u!1 &765100739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1441,7 @@ MonoBehaviour:
   areaRadius: 15
   groupRadius: 2.5
   minRadius: 4
-  totalMinerals: 25000
+  totalMinerals: 6000
   prefab: {fileID: 1254684328523676, guid: 292a515e97e3eb844b44f0d24ce4b7b7, type: 2}
 --- !u!4 &906383046
 Transform:

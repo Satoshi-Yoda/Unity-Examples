@@ -46,6 +46,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Harvester Ray
+    uniqueID: 4000748593
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

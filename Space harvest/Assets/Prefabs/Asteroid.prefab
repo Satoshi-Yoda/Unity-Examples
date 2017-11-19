@@ -106,8 +106,8 @@ MonoBehaviour:
   - {fileID: 1599298746918524, guid: 61ad60d45d16a434a9a3cb239262b81f, type: 2}
   - {fileID: 1922957351128052, guid: c286f0cbbca5c2b4b805d99b9b994f0f, type: 2}
   - {fileID: 1872287700232574, guid: 46166778b5def5043b88f4d2ca54b4ff, type: 2}
-  minerals: 150
-  size2: 80
-  size3: 120
-  size4: 200
+  minerals: 25
+  size2: 20
+  size3: 30
+  size4: 50
   size: 0
