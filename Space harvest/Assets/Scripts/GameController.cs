@@ -136,7 +136,13 @@ public class GameController : MonoBehaviour
 		solarPanels.AddRange(GameObject.FindGameObjectsWithTag("SolarPanel"));
 		float energyPower = 0;
 		if (solarPanels.Count > 0) {
-			energyPower = solarPanels.Count / solarPanels[0].GetComponent<SolarPanelController>().interval;
+			energyPower = solarPanels.Count / solarPanels[0].GetComponent<SolarPanelController>().interval - harvestPower;
+		}
+
+		List<GameObject> laserTurrets = new List<GameObject>();
+		laserTurrets.AddRange(GameObject.FindGameObjectsWithTag("LaserTurret"));
+		foreach (GameObject laserTurret in laserTurrets) {
+			energyPower -= laserTurret.GetComponent<LaserTurretController>().firing ? laserTurret.GetComponent<LaserTurretController>().energyConsumptionPerSecond : 0;
 		}
 
 		mineralsText.text = "" + Mathf.Round(minerals) + (harvestPower > 0 ? (" +" + harvestPower) : "");
