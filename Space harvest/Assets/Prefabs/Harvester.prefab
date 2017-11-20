@@ -263,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEnergy: 5
+  visualOverheadAllowance: 2
   frame: {fileID: 1305998635817328}
   progress: {fileID: 1233802376567382}
 --- !u!212 &212092877362504126

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnergyConsumerController : MonoBehaviour
 {
 	public int targetEnergy;
+	public int visualOverheadAllowance;
 	public GameObject frame;
 	public GameObject progress;
 
@@ -47,7 +48,7 @@ public class EnergyConsumerController : MonoBehaviour
 	}
 
 	void UpdateBar() {
-		if (targetEnergy == 0 || Full()) {
+		if (targetEnergy == 0 || (energy + visualOverheadAllowance >= targetEnergy)) {
 			frame.transform.localScale = new Vector3(0, 0, 0);
 			progress.transform.localScale = new Vector3(0, 0, 0);
 		} else {
