@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d570fb9ecc74e74a8a4fd97a5e047ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooling: 50
+  cooling: 40
   maxTemperature: 100
   energyLinkVisual: {fileID: 1174963664706484, guid: 218196214e62c9344906606237559ffd,
     type: 2}

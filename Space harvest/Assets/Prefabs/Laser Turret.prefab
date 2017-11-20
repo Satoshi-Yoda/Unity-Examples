@@ -262,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dps: 40
   distance: 12
-  energyConsumptionPerSecond: 3
+  energyConsumptionPerSecond: 5
   flarePrefab: {fileID: 1144014970052140, guid: 3ea674cf6e58fa540ab32105c152cddf,
     type: 2}
   rayPrefab: {fileID: 1313788421092950, guid: 9923a87730bab234fb58ab3d8e42648e, type: 2}
