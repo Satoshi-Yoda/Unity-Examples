@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEnergy: 0
+  frame: {fileID: 1187306917535656}
   progress: {fileID: 1624902614783234}
 --- !u!212 &212362133265405422
 SpriteRenderer:

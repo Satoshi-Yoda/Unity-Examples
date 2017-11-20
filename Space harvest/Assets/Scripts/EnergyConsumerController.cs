@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnergyConsumerController : MonoBehaviour
 {
 	public int targetEnergy;
+	public GameObject frame;
 	public GameObject progress;
 
 	private int willEnergy = 0;
@@ -13,6 +14,20 @@ public class EnergyConsumerController : MonoBehaviour
 	public void Energize() {
 		energy++;
 		UpdateBar();
+	}
+
+	public void FullEnergize() {
+		energy = targetEnergy;
+		willEnergy = targetEnergy;
+		UpdateBar();
+	}
+
+	public void Spend() {
+		if (energy > 0) {
+			energy--;
+			willEnergy--;
+			UpdateBar();
+		}
 	}
 
 	public void WillEnergize() {
@@ -32,6 +47,12 @@ public class EnergyConsumerController : MonoBehaviour
 	}
 
 	void UpdateBar() {
-		progress.transform.localScale = new Vector3((1.0f * energy) / targetEnergy, 1, 1);
+		if (targetEnergy == 0 || Full()) {
+			frame.transform.localScale = new Vector3(0, 0, 0);
+			progress.transform.localScale = new Vector3(0, 0, 0);
+		} else {
+			frame.transform.localScale = new Vector3(1, 1, 1);
+			progress.transform.localScale = new Vector3((1.0f * energy) / targetEnergy, 1, 1);
+		}
 	}
 }

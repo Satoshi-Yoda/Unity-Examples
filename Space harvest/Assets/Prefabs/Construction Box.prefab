@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEnergy: 0
+  frame: {fileID: 1280768857472842}
   progress: {fileID: 1925267855071998}
 --- !u!114 &114209610737063702
 MonoBehaviour:

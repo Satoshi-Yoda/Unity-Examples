@@ -9,6 +9,7 @@ public class HarvesterController : MonoBehaviour
 	public float power;
 	public GameObject rayPrefab;
 	public GameObject beepPrefab;
+	public EnergyConsumerController energyConsumer;
 
 	private GameController gameController;
 	private List<AsteroidController> asteroids = new List<AsteroidController>();
@@ -28,6 +29,7 @@ public class HarvesterController : MonoBehaviour
 
 		creationTime = Time.timeSinceLevelLoad;
 		StartCoroutine(ChangeTarget());
+		energyConsumer.FullEnergize();
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -51,26 +53,31 @@ public class HarvesterController : MonoBehaviour
 			asteroids = notEmpty;
 
 			if (asteroids.Count > 0) {
-				AsteroidController oldTarget = target;
-				for (int attempt = 0; attempt < 99; attempt++) {
-					target = asteroids[Random.Range(0, asteroids.Count)];
-					if (target != oldTarget) break;
+				if (energyConsumer.energy > 0) {
+					AsteroidController oldTarget = target;
+					for (int attempt = 0; attempt < 99; attempt++) {
+						target = asteroids[Random.Range(0, asteroids.Count)];
+						if (target != oldTarget) break;
+					}
+					float distance = (target.gameObject.transform.position - gameObject.transform.position).magnitude;
+					Vector2 direction = (target.gameObject.transform.position - gameObject.transform.position).normalized;
+					float angle = -Mathf.Atan2(direction.x, direction.y) * 180 / Mathf.PI;
+
+					yield return new WaitForSeconds(powerUpDelay);
+					if (ray == null) ray = Instantiate(rayPrefab, gameObject.transform.position, Quaternion.identity);
+					ray.transform.parent = gameObject.transform;
+					ray.transform.position = (target.gameObject.transform.position + gameObject.transform.position) / 2;
+					ray.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+					ray.transform.localScale = new Vector3(1, distance * 0.4f, 1);
+					yield return new WaitForSeconds(interval - powerUpDelay);
+
+					Destroy(ray);
+					target.Harvest(power);
+					gameController.AddMinerals(power);
+					energyConsumer.Spend();
+				} else {
+					yield return new WaitForSeconds(powerUpDelay);
 				}
-				float distance = (target.gameObject.transform.position - gameObject.transform.position).magnitude;
-				Vector2 direction = (target.gameObject.transform.position - gameObject.transform.position).normalized;
-				float angle = -Mathf.Atan2(direction.x, direction.y) * 180 / Mathf.PI;
-
-				yield return new WaitForSeconds(powerUpDelay);
-				if (ray == null) ray = Instantiate(rayPrefab, gameObject.transform.position, Quaternion.identity);
-				ray.transform.parent = gameObject.transform;
-				ray.transform.position = (target.gameObject.transform.position + gameObject.transform.position) / 2;
-				ray.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-				ray.transform.localScale = new Vector3(1, distance * 0.4f, 1);
-				yield return new WaitForSeconds(interval - powerUpDelay);
-
-				Destroy(ray);
-				target.Harvest(power);
-				gameController.AddMinerals(power);
 			} else {
 				target = null;
 				Destroy(ray);
