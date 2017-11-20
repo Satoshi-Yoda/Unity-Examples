@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 0.5
   thrust: 1
-  hull: 1000
+  hull: 750
   requisition: 100
   destroyDistance: 0.7
   explosionPrefab: {fileID: 1968983908613142, guid: 56d201a7ebc244241b46d6cd208a1761,
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13914a111bb4bd24b986314677afcd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPeriod: 1.2
+  spawnPeriod: 1.25
   spawnStart: 5
   spawnRadius: 30
   interseprotPrefab: {fileID: 1168525390260768, guid: 5c9daa5c9e8920345be36053c6cc0743,
