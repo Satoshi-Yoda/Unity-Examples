@@ -13,7 +13,7 @@ public class EnergyLinkController : MonoBehaviour
 	private GameObject visual;
 	private float maxEPS;
 	private List<EnergyLinkController> nearby = new List<EnergyLinkController>();
-	private List<ConstructionBoxController> constructions = new List<ConstructionBoxController>();
+	private List<EnergyConsumerController> constructions = new List<EnergyConsumerController>();
 	private float temperature = 0.0f;
 	private bool lastOverloaded = false;
 
@@ -22,15 +22,15 @@ public class EnergyLinkController : MonoBehaviour
 		EnergyLinkController target = energy.target;
 		EnergyLinkController previous = energy.previous;
 
-		List<ConstructionBoxController> needMoreConstructions = new List<ConstructionBoxController>();
-		foreach (ConstructionBoxController construnction in constructions) {
+		List<EnergyConsumerController> needMoreConstructions = new List<EnergyConsumerController>();
+		foreach (EnergyConsumerController construnction in constructions) {
 			if (construnction.NeedMore()) {
 				needMoreConstructions.Add(construnction);
 			}
 		}
 
 		if (needMoreConstructions.Count > 0) {
-			ConstructionBoxController construnction = needMoreConstructions[Random.Range(0, needMoreConstructions.Count)];
+			EnergyConsumerController construnction = needMoreConstructions[Random.Range(0, needMoreConstructions.Count)];
 			energy.construction = construnction;
 			construnction.WillEnergize();
 			return true;
@@ -95,8 +95,8 @@ public class EnergyLinkController : MonoBehaviour
 		if (other.tag == "EnergyLink") {
 			nearby.Add(other.gameObject.GetComponent<EnergyLinkController>());
 			// Debug.Log("Energy Link added");
-		} else if (other.tag == "ConstructionBox") {
-			constructions.Add(other.gameObject.GetComponent<ConstructionBoxController>());
+		} else if (other.tag == "EnergyConsumer") {
+			constructions.Add(other.gameObject.GetComponent<EnergyConsumerController>());
 			// Debug.Log("ConstructionBox added");
 		}
 	}
@@ -105,8 +105,8 @@ public class EnergyLinkController : MonoBehaviour
 		if (other.tag == "EnergyLink") {
 			nearby.Remove(other.gameObject.GetComponent<EnergyLinkController>());
 			// Debug.Log("Energy Link removed");
-		} else if (other.tag == "ConstructionBox") {
-			constructions.Remove(other.gameObject.GetComponent<ConstructionBoxController>());
+		} else if (other.tag == "EnergyConsumer") {
+			constructions.Remove(other.gameObject.GetComponent<EnergyConsumerController>());
 			// Debug.Log("Construction Box removed");
 		}
 	}

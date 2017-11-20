@@ -10,7 +10,7 @@ public class EnergyController : MonoBehaviour
 	private GameController gameController;
 	public EnergyLinkController previous { get; set; }
 	public EnergyLinkController target { get; set; }
-	public ConstructionBoxController construction { get; set; }
+	public EnergyConsumerController construction { get; set; }
 
 	void Start() {
 		GameObject gameControllerObject = GameObject.FindWithTag("GameController");

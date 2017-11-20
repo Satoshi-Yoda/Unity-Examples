@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - Prototype
   - Bomb
+  - EnergyConsumer
   layers:
   - Default
   - TransparentFX

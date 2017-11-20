@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\EnemyFighterController.cs" />
      <Compile Include="Assets\Scripts\EnemyGenerator.cs" />
      <Compile Include="Assets\Scripts\EnemyMothershipController.cs" />
+     <Compile Include="Assets\Scripts\EnergyConsumerController.cs" />
      <Compile Include="Assets\Scripts\EnergyController.cs" />
      <Compile Include="Assets\Scripts\EnergyLinkController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />

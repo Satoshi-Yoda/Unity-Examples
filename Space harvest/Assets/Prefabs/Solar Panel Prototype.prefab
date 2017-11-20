@@ -152,7 +152,7 @@ MonoBehaviour:
   energyConsumption: 40
   objectPrefab: {fileID: 1284958348150720, guid: f4392be947f14294ea8525511aa3f14e,
     type: 2}
-  constructionBoxPrefab: {fileID: 1840357873267008, guid: eb028dd36606f0343a124ae9b28fd522,
+  constructionBoxPrefab: {fileID: 1053543422916216, guid: eb028dd36606f0343a124ae9b28fd522,
     type: 2}
 --- !u!212 &212549552088230534
 SpriteRenderer:
