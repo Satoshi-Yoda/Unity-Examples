@@ -89,6 +89,7 @@ public class EnergyLinkController : MonoBehaviour
 		lastOverloaded = overloaded;
 
 		temperature -= Time.deltaTime * cooling;
+		if (temperature < 0) temperature = 0;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
